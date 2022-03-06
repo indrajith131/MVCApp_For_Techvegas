@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MVCapp.Models.UserRole>
+
+@{
+    ViewBag.Title = "Index";
+}
+<html>
+<head>
+    <style>
+        table, td, th {
+            border: 1px solid black;
+        }
+
+        td, th {
+            text-align: center;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: initial;
+        }
+    </style>
+</head>
+<body>
+    <h2>UserRoles</h2>
+
+    <div>
+
+        <hr />
+       
+            <table class="dl-horizontal">
+                <tr>
+                    <th>RoleName</th>
+                    <th>RoleId</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                     <tr>
+
+                         <td> @item.RoleName</td>
+                          <td>@item.RoleId</td>
+                     </tr>
+                
+                 }
+                </table>
+
+           
+        <br />
+        <h3>@Html.ActionLink("Create New Role", "Create", "Role")</h3>
+    </div>
+</body>
+</html>
